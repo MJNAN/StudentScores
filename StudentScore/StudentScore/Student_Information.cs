@@ -36,7 +36,7 @@ namespace StudentScore
             mysql = getMySqlCon();
         }
 
-        public static void getInsert(MySqlCommand mySqlCommand)
+        public static void getUpdate(MySqlCommand mySqlCommand)
         {
             try
             {
@@ -60,9 +60,9 @@ namespace StudentScore
             string Major = textBox4.Text;
             string Student_Password = textBox6.Text;
             mysql.Open();
-            String sqlInsert = "insert into student_information (Academe，Major，Student_Password) values ('" + textBox3.Text + "','" + textBox4.Text + "','" + textBox4.Text + "','" + textBox6.Text + "')";
-            MySqlCommand mySqlCommand = getSqlCommand(sqlInsert, mysql);
-            getInsert(mySqlCommand);
+            String sqlUpdate = "update student_information set Academe = '" + textBox3.Text + "',Major='" + textBox4.Text + " ',Student_Password='" + textBox6.Text + " ' where Student_ID = " + textBox1.Text;
+            MySqlCommand mySqlCommand = getSqlCommand(sqlUpdate, mysql);
+            getUpdate(mySqlCommand);
             mysql.Close();
         }
     }
