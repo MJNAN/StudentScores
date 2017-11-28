@@ -19,5 +19,10 @@ namespace StudentScore
         {
             (new Student_Information()).ShowDialog();
         }
+
+        private void Student_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

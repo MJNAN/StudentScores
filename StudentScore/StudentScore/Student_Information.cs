@@ -32,7 +32,7 @@ namespace StudentScore
         private void Student_Information_Load(object sender, EventArgs e)
         {
             textBox1.Text = Program.student_id;
-            textBox2.Text = Program.student_name;
+            textBox2.Text = Program.student_name;     
             mysql = getMySqlCon();
         }
 

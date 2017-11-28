@@ -20,3 +20,4 @@ C:\Users\高楠\Desktop\404原型系统1.0-04组\StudentScore\StudentScore\obj\D
 C:\Users\高楠\Desktop\404原型系统1.0-04组\StudentScore\StudentScore\obj\Debug\StudentScore.Teacher.resources
 C:\Users\高楠\Desktop\404原型系统1.0-04组\StudentScore\StudentScore\obj\Debug\StudentScore.Student_Information.resources
 C:\Users\高楠\Desktop\404原型系统1.0-04组\StudentScore\StudentScore\obj\Debug\StudentScore.Teacher_Informatin.resources
+C:\Users\高楠\Desktop\404原型系统1.0-04组\StudentScore\StudentScore\obj\Debug\StudentScore.Teacher_Adjust.resources

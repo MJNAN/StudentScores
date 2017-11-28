@@ -46,7 +46,7 @@ namespace StudentScore
         private void Form1_Load(object sender, EventArgs e)
         {
             mysql = getMySqlCon();
-            radioButton1.Checked = true;//add
+
         }
         public static MySqlConnection getMySqlCon()
         {
@@ -126,7 +126,6 @@ namespace StudentScore
                     {
                         Program.student_id = reader.GetString(0);
                         Program.student_name = reader.GetString(1);
-                      
 
                     }
                     else
