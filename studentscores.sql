@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50717
 File Encoding         : 65001
 
-Date: 2017-11-06 19:34:18
+Date: 2017-11-28 17:57:49
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -20,17 +20,14 @@ SET FOREIGN_KEY_CHECKS=0;
 -- ----------------------------
 DROP TABLE IF EXISTS `student_between group`;
 CREATE TABLE `student_between group` (
-  `school_year` varchar(20) DEFAULT NULL COMMENT '学年',
   `Tester_ID` decimal(12,0) NOT NULL COMMENT '测评人学号',
   `Tester_Name` varchar(50) DEFAULT NULL COMMENT '测评人姓名',
   `Tester_Evalu` varchar(2) DEFAULT NULL COMMENT '测评状态',
-  `Student_between group_STime` datetime DEFAULT NULL COMMENT '学生组间互评开始时间',
-  `Student_between group_OTime` datetime DEFAULT NULL COMMENT '学生组间互评结束时间',
-  `EvaluObj_ID` decimal(12,0) DEFAULT NULL COMMENT '测评对象学号',
+  `EvaluObj_ID` decimal(12,0) NOT NULL COMMENT '测评对象学号',
   `EvaluObj_Name` varchar(50) DEFAULT NULL COMMENT '测评对象姓名',
   `Group` int(5) DEFAULT NULL COMMENT '组别',
   `Student_between group_total` decimal(5,0) DEFAULT NULL COMMENT '学生组间互评总分',
-  PRIMARY KEY (`Tester_ID`)
+  PRIMARY KEY (`Tester_ID`,`EvaluObj_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -42,16 +39,13 @@ CREATE TABLE `student_between group` (
 -- ----------------------------
 DROP TABLE IF EXISTS `student_in group`;
 CREATE TABLE `student_in group` (
-  `school_year` varchar(20) DEFAULT NULL COMMENT '学年',
   `Tester_ID` decimal(12,0) NOT NULL COMMENT '测评人学号',
   `Tester_Name` varchar(50) DEFAULT NULL COMMENT '测评人姓名',
   `Tester_Evalu` varchar(2) DEFAULT NULL COMMENT '测评状态',
-  `Student_in group_STime` datetime DEFAULT NULL COMMENT '学生组内互评开始时间',
-  `Student_in group_OTime` datetime DEFAULT NULL COMMENT '学生组间互评结束时间',
-  `EvaluObj_ID` decimal(12,0) DEFAULT NULL COMMENT '测评对象学号',
+  `EvaluObj_ID` decimal(12,0) NOT NULL COMMENT '测评对象学号',
   `EvaluObj_Name` varchar(50) DEFAULT NULL COMMENT '测评对象姓名',
   `Student_in group_total` decimal(5,0) DEFAULT NULL COMMENT '学生组内互评总分',
-  PRIMARY KEY (`Tester_ID`)
+  PRIMARY KEY (`Tester_ID`,`EvaluObj_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -65,10 +59,9 @@ DROP TABLE IF EXISTS `student_information`;
 CREATE TABLE `student_information` (
   `Student_ID` decimal(12,0) NOT NULL COMMENT '学号',
   `Student_Name` varchar(10) DEFAULT NULL COMMENT '学生姓名',
-  `Entrance_Date` datetime DEFAULT NULL COMMENT '入学日期',
   `Academe` varchar(24) DEFAULT NULL COMMENT '所属学院',
   `Major` varchar(24) DEFAULT NULL COMMENT '所属专业',
-  `Group` int(5) DEFAULT NULL COMMENT '组别',
+  `Group` varchar(5) DEFAULT NULL COMMENT '组别',
   `Status` varchar(8) DEFAULT NULL COMMENT '身份',
   `Student_Password` varchar(14) DEFAULT NULL COMMENT '学生密码',
   PRIMARY KEY (`Student_ID`)
@@ -77,16 +70,15 @@ CREATE TABLE `student_information` (
 -- ----------------------------
 -- Records of student_information
 -- ----------------------------
+INSERT INTO `student_information` VALUES ('105032015001', '王五', '数学', '数学 ', '1', 'Student', 'bcd ');
+INSERT INTO `student_information` VALUES ('105032015002', '赵六', '', '', '1', 'Student', '');
 
 -- ----------------------------
 -- Table structure for student_total
 -- ----------------------------
 DROP TABLE IF EXISTS `student_total`;
 CREATE TABLE `student_total` (
-  `school_year` varchar(20) DEFAULT NULL COMMENT '学年',
   `Tester_Evalu` varchar(2) DEFAULT NULL COMMENT '测评状态',
-  `STime` datetime DEFAULT NULL COMMENT '填写测评开始时间',
-  `OTime` datetime DEFAULT NULL COMMENT '填写测评结束时间',
   `EvaluObj_ID` decimal(12,0) NOT NULL COMMENT '测评对象学号',
   `EvaluObj_Name` varchar(50) DEFAULT NULL COMMENT '测评对象姓名',
   `Student_In group_Total` decimal(5,0) DEFAULT NULL COMMENT '学生组内互评总分',
@@ -114,14 +106,16 @@ CREATE TABLE `syuser` (
 -- ----------------------------
 -- Records of syuser
 -- ----------------------------
-INSERT INTO `syuser` VALUES ('10503', 'abc', 'Teacher');
+INSERT INTO `syuser` VALUES ('1052015001', 'abc', 'Teacher');
+INSERT INTO `syuser` VALUES ('1052015002', 'cde', 'Teacher');
+INSERT INTO `syuser` VALUES ('105032015001', 'abc', 'Student');
+INSERT INTO `syuser` VALUES ('105032015002', 'cde', 'Student');
 
 -- ----------------------------
 -- Table structure for teacher_adjust
 -- ----------------------------
 DROP TABLE IF EXISTS `teacher_adjust`;
 CREATE TABLE `teacher_adjust` (
-  `school_year` datetime DEFAULT NULL COMMENT '学年',
   `Regulator_ID` decimal(12,0) NOT NULL COMMENT '调整人工号',
   `Regulator_Name` varchar(10) DEFAULT NULL COMMENT '调整人姓名',
   `Student_in group_Pro` decimal(3,0) DEFAULT NULL COMMENT '学生组内互评百分比',
@@ -163,16 +157,13 @@ CREATE TABLE `teacher_admin` (
 -- ----------------------------
 DROP TABLE IF EXISTS `teacher_independet`;
 CREATE TABLE `teacher_independet` (
-  `school_year` varchar(20) DEFAULT NULL COMMENT '学年',
   `Tester_ID` decimal(12,0) NOT NULL COMMENT '测评人工号',
   `Tester_Name` varchar(10) DEFAULT NULL COMMENT '测评人姓名',
   `Tester_Evalu` varchar(2) DEFAULT NULL COMMENT '测评状态',
-  `Teacher_independ_STime` datetime DEFAULT NULL COMMENT '教师独立评分开始时间',
-  `Teacher_independ_OTime` datetime DEFAULT NULL COMMENT '教师独立评分结束时间',
-  `EvaluObj_ID` decimal(12,0) DEFAULT NULL COMMENT '测评对象学号',
+  `EvaluObj_ID` decimal(12,0) NOT NULL COMMENT '测评对象学号',
   `EvaluObj_Name` varchar(10) DEFAULT NULL COMMENT '测评对象姓名',
   `Teacher_Total` decimal(5,0) DEFAULT NULL COMMENT '教师独立评分总分',
-  PRIMARY KEY (`Tester_ID`)
+  PRIMARY KEY (`Tester_ID`,`EvaluObj_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -186,7 +177,6 @@ DROP TABLE IF EXISTS `teacher_information`;
 CREATE TABLE `teacher_information` (
   `Teacher_ID` decimal(12,0) NOT NULL COMMENT '教师工号',
   `Teacher_Name` varchar(10) DEFAULT NULL COMMENT '教师姓名',
-  `Entrance_date` datetime DEFAULT NULL COMMENT '入职日期',
   `Academe` varchar(24) DEFAULT NULL COMMENT '所属学院',
   `Status` varchar(8) DEFAULT NULL COMMENT '身份',
   `Teacher_Password` varchar(14) DEFAULT NULL COMMENT '教师密码',
@@ -196,3 +186,5 @@ CREATE TABLE `teacher_information` (
 -- ----------------------------
 -- Records of teacher_information
 -- ----------------------------
+INSERT INTO `teacher_information` VALUES ('1052015001', '张三', '数学与信息学院', 'Teacher', 'bcy ');
+INSERT INTO `teacher_information` VALUES ('1052015002', '李四', null, 'Teacher', null);
