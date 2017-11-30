@@ -15,6 +15,7 @@ namespace StudentScore
         {
             InitializeComponent();
         }
+        MySqlConnection mysql;
         public static MySqlConnection getMySqlCon()
         {
             String mysqlStr = "Database=studentscores;Data Source=127.0.0.1;User Id=root;Password=123456;pooling=false;CharSet=utf8;port=3306";
@@ -46,8 +47,8 @@ namespace StudentScore
         }
         private void Teacher_Adjust_Load(object sender, EventArgs e)
         {
-            textBox1.Text = Program.teacher_id;
-            textBox2.Text = Program.teacher_name;
+            textBox4.Text = Program.teacher_id;
+            textBox5.Text = Program.teacher_name;
             mysql = getMySqlCon();
         }
         private void button1_Click(object sender, EventArgs e)
@@ -55,8 +56,9 @@ namespace StudentScore
             string Student_in_group_Pro = textBox1.Text;
             string Student_between_group_Pro = textBox2.Text;
             string Teacher_independ_Pro = textBox3.Text;
+            string Student_in_group_STime = dateTimePicker1.Value.Date.ToShortDateString();
             mysql.Open();
-            String sqlUpdate = "update teacher_adjust set Student_in_group_Pro = '" + textBox1.Text + "',Student_between_group_Pro='" + textBox2.Text + " ',Teacher_independ_Pro='" + textBox3.Text + " ' where Regulator_ID = " + textBox1.Text;
+            String sqlUpdate = "update teacher_adjust set Student_in_group_Pro = '" + textBox1.Text + "',Student_between_group_Pro='" + textBox2.Text + " ',Teacher_independ_Pro='" + textBox3.Text + " ',Student_in_group_STime='" + dateTimePicker1.Value + " ' where Regulator_ID = " + textBox4.Text;
             MySqlCommand mySqlCommand = getSqlCommand1(sqlUpdate, mysql);
             getUpdate(mySqlCommand);
             mysql.Close();

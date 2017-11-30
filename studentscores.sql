@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50717
 File Encoding         : 65001
 
-Date: 2017-11-28 17:57:49
+Date: 2017-11-30 17:48:19
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -20,10 +20,10 @@ SET FOREIGN_KEY_CHECKS=0;
 -- ----------------------------
 DROP TABLE IF EXISTS `student_between group`;
 CREATE TABLE `student_between group` (
-  `Tester_ID` decimal(12,0) NOT NULL COMMENT '测评人学号',
+  `Tester_ID` varchar(12) NOT NULL COMMENT '测评人学号',
   `Tester_Name` varchar(50) DEFAULT NULL COMMENT '测评人姓名',
   `Tester_Evalu` varchar(2) DEFAULT NULL COMMENT '测评状态',
-  `EvaluObj_ID` decimal(12,0) NOT NULL COMMENT '测评对象学号',
+  `EvaluObj_ID` varchar(12) NOT NULL COMMENT '测评对象学号',
   `EvaluObj_Name` varchar(50) DEFAULT NULL COMMENT '测评对象姓名',
   `Group` int(5) DEFAULT NULL COMMENT '组别',
   `Student_between group_total` decimal(5,0) DEFAULT NULL COMMENT '学生组间互评总分',
@@ -39,10 +39,10 @@ CREATE TABLE `student_between group` (
 -- ----------------------------
 DROP TABLE IF EXISTS `student_in group`;
 CREATE TABLE `student_in group` (
-  `Tester_ID` decimal(12,0) NOT NULL COMMENT '测评人学号',
+  `Tester_ID` varchar(12) NOT NULL COMMENT '测评人学号',
   `Tester_Name` varchar(50) DEFAULT NULL COMMENT '测评人姓名',
   `Tester_Evalu` varchar(2) DEFAULT NULL COMMENT '测评状态',
-  `EvaluObj_ID` decimal(12,0) NOT NULL COMMENT '测评对象学号',
+  `EvaluObj_ID` varchar(12) NOT NULL COMMENT '测评对象学号',
   `EvaluObj_Name` varchar(50) DEFAULT NULL COMMENT '测评对象姓名',
   `Student_in group_total` decimal(5,0) DEFAULT NULL COMMENT '学生组内互评总分',
   PRIMARY KEY (`Tester_ID`,`EvaluObj_ID`)
@@ -97,7 +97,7 @@ CREATE TABLE `student_total` (
 -- ----------------------------
 DROP TABLE IF EXISTS `syuser`;
 CREATE TABLE `syuser` (
-  `Use_ID` decimal(12,0) NOT NULL COMMENT '用户名（学号/工号/电话号码）',
+  `Use_ID` varchar(12) NOT NULL COMMENT '用户名（学号/工号/电话号码）',
   `Password` varchar(50) NOT NULL COMMENT '用户密码',
   `Use_Status` varchar(50) NOT NULL COMMENT '身份（教师/学生)',
   PRIMARY KEY (`Use_ID`)
@@ -106,25 +106,25 @@ CREATE TABLE `syuser` (
 -- ----------------------------
 -- Records of syuser
 -- ----------------------------
-INSERT INTO `syuser` VALUES ('1052015001', 'abc', 'Teacher');
-INSERT INTO `syuser` VALUES ('1052015002', 'cde', 'Teacher');
 INSERT INTO `syuser` VALUES ('105032015001', 'abc', 'Student');
 INSERT INTO `syuser` VALUES ('105032015002', 'cde', 'Student');
+INSERT INTO `syuser` VALUES ('1052015001', 'abc', 'Teacher');
+INSERT INTO `syuser` VALUES ('1052015002', 'cde', 'Teacher');
 
 -- ----------------------------
 -- Table structure for teacher_adjust
 -- ----------------------------
 DROP TABLE IF EXISTS `teacher_adjust`;
 CREATE TABLE `teacher_adjust` (
-  `Regulator_ID` decimal(12,0) NOT NULL COMMENT '调整人工号',
+  `Regulator_ID` varchar(12) NOT NULL COMMENT '调整人工号',
   `Regulator_Name` varchar(10) DEFAULT NULL COMMENT '调整人姓名',
-  `Student_in group_Pro` decimal(3,0) DEFAULT NULL COMMENT '学生组内互评百分比',
-  `Student_between group_Pro` decimal(3,0) DEFAULT NULL COMMENT '学生组间互评百分比',
+  `Student_in_group_Pro` decimal(3,0) DEFAULT NULL COMMENT '学生组内互评百分比',
+  `Student_between_group_Pro` decimal(3,0) DEFAULT NULL COMMENT '学生组间互评百分比',
   `Teacher_independ_Pro` decimal(3,0) DEFAULT NULL COMMENT '教师独立评分百分比',
-  `Student_in group_STime` datetime DEFAULT NULL COMMENT '学生组内互评开始时间',
-  `Student_in group_OTime` datetime DEFAULT NULL COMMENT '学生组间互评结束时间',
-  `Student_between group_STime` datetime DEFAULT NULL COMMENT '学生组间互评开始时间',
-  `Student_between group_OTime` datetime DEFAULT NULL COMMENT '学生组间互评结束时间',
+  `Student_in_group_STime` datetime DEFAULT NULL COMMENT '学生组内互评开始时间',
+  `Student_in_group_OTime` datetime DEFAULT NULL COMMENT '学生组间互评结束时间',
+  `Student_between_group_STime` datetime DEFAULT NULL COMMENT '学生组间互评开始时间',
+  `Student_between_group_OTime` datetime DEFAULT NULL COMMENT '学生组间互评结束时间',
   `Teacher_independ_STime` datetime DEFAULT NULL COMMENT '教师独立评分开始时间',
   `Teacher_independ_OTime` datetime DEFAULT NULL COMMENT '教师独立评分结束时间',
   `STime` datetime DEFAULT NULL COMMENT '测评开始时间',
@@ -135,6 +135,7 @@ CREATE TABLE `teacher_adjust` (
 -- ----------------------------
 -- Records of teacher_adjust
 -- ----------------------------
+INSERT INTO `teacher_adjust` VALUES ('1052015001', '张三', '10', '20', '70', null, null, null, null, null, null, null, null);
 
 -- ----------------------------
 -- Table structure for teacher_admin
@@ -142,7 +143,7 @@ CREATE TABLE `teacher_adjust` (
 DROP TABLE IF EXISTS `teacher_admin`;
 CREATE TABLE `teacher_admin` (
   `Group` int(5) DEFAULT NULL COMMENT '组别',
-  `Student_ID` decimal(12,0) NOT NULL COMMENT '学号',
+  `Student_ID` varchar(12) NOT NULL COMMENT '学号',
   `Major` varchar(50) DEFAULT NULL COMMENT '专业',
   `Student_Name` varchar(50) DEFAULT NULL COMMENT '学生姓名',
   PRIMARY KEY (`Student_ID`)
@@ -157,10 +158,10 @@ CREATE TABLE `teacher_admin` (
 -- ----------------------------
 DROP TABLE IF EXISTS `teacher_independet`;
 CREATE TABLE `teacher_independet` (
-  `Tester_ID` decimal(12,0) NOT NULL COMMENT '测评人工号',
+  `Tester_ID` varchar(12) NOT NULL COMMENT '测评人工号',
   `Tester_Name` varchar(10) DEFAULT NULL COMMENT '测评人姓名',
   `Tester_Evalu` varchar(2) DEFAULT NULL COMMENT '测评状态',
-  `EvaluObj_ID` decimal(12,0) NOT NULL COMMENT '测评对象学号',
+  `EvaluObj_ID` varchar(12) NOT NULL COMMENT '测评对象学号',
   `EvaluObj_Name` varchar(10) DEFAULT NULL COMMENT '测评对象姓名',
   `Teacher_Total` decimal(5,0) DEFAULT NULL COMMENT '教师独立评分总分',
   PRIMARY KEY (`Tester_ID`,`EvaluObj_ID`)
@@ -175,7 +176,7 @@ CREATE TABLE `teacher_independet` (
 -- ----------------------------
 DROP TABLE IF EXISTS `teacher_information`;
 CREATE TABLE `teacher_information` (
-  `Teacher_ID` decimal(12,0) NOT NULL COMMENT '教师工号',
+  `Teacher_ID` varchar(12) NOT NULL COMMENT '教师工号',
   `Teacher_Name` varchar(10) DEFAULT NULL COMMENT '教师姓名',
   `Academe` varchar(24) DEFAULT NULL COMMENT '所属学院',
   `Status` varchar(8) DEFAULT NULL COMMENT '身份',

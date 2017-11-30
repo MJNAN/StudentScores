@@ -19,5 +19,10 @@ namespace StudentScore
         {
             (new Teacher_Informatin()).ShowDialog();
         }
+
+        private void toolStripMenuItem4_Click(object sender, EventArgs e)
+        {
+            (new Teacher_Adjust()).ShowDialog();
+        }
     }
 }

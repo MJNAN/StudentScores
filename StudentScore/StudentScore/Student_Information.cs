@@ -12,6 +12,7 @@ namespace StudentScore
 {
     public partial class Student_Information : Form
     {
+        public static string sqlSearch;
         public static string result;
         MySqlConnection mysql;
         public Student_Information()
@@ -29,13 +30,45 @@ namespace StudentScore
             MySqlCommand mySqlCommand = new MySqlCommand(sql, mysql);
             return mySqlCommand;
         }
+
         private void Student_Information_Load(object sender, EventArgs e)
         {
+            mysql.Open();
+            String sqlSearch = "SELECT Group FROM student_information WHERE Student_ID='" + Program.student_id + "'";
+            MySqlCommand mySqlCommand = getSqlCommand(sqlSearch, mysql);
+            textBox5.Text=getResultset(mySqlCommand);
+            mysql.Close();
             textBox1.Text = Program.student_id;
             textBox2.Text = Program.student_name;     
             mysql = getMySqlCon();
         }
-
+        public static string getResultset(MySqlCommand mySqlCommand)
+        {
+            MySqlDataReader reader = mySqlCommand.ExecuteReader();
+            try
+            {
+                while (reader.Read())
+                {
+                    if (reader.HasRows)
+                    {
+                        return reader.GetString(0);
+                    }
+                    else
+                    {
+                        return "";
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("查询失败了！");
+            }
+            finally
+            {
+                reader.Close();
+            }
+            return "";
+        }
         public static void getUpdate(MySqlCommand mySqlCommand)
         {
             try
