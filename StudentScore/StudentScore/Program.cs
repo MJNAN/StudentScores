@@ -12,7 +12,6 @@ namespace StudentScore
         public static string teacher_name;
         public static string student_id;
         public static string student_name;
-        public static string student_group;
         /// <summary>
         /// 应用程序的主入口点。
         /// </summary>

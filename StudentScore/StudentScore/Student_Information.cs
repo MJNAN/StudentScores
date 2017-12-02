@@ -63,7 +63,11 @@ namespace StudentScore
             mysql = getMySqlCon();
             textBox1.Text = Program.student_id;
             textBox2.Text = Program.student_name;
-            
+            mysql.Open();
+            String sqlSearch = "select student_information.Group from student_information where Student_ID='" + Program.student_id + "'";
+            MySqlCommand mySqlCommand = getSqlCommand(sqlSearch, mysql);
+            textBox5.Text= getResultset(mySqlCommand);
+            mysql.Close();
         }
 
         public static void getUpdate(MySqlCommand mySqlCommand)
@@ -93,9 +97,6 @@ namespace StudentScore
             String sqlUpdate1 = "update student_information set Academe = '" + textBox3.Text + "',Major='" + textBox4.Text + " ',Student_Password='" + textBox6.Text + " ' where Student_ID = " + textBox1.Text;
             MySqlCommand mySqlCommand1 = getSqlCommand(sqlUpdate1, mysql);
             getUpdate(mySqlCommand1);
-            String sqlUpdate2 = "update syuser set Password='" + textBox6.Text + " ' where Use_ID = " + textBox1.Text;
-            MySqlCommand mySqlCommand2 = getSqlCommand(sqlUpdate2, mysql);
-            getUpdate(mySqlCommand2);
             mysql.Close();
         }
     }

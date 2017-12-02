@@ -57,8 +57,15 @@ namespace StudentScore
             string Student_between_group_Pro = textBox2.Text;
             string Teacher_independ_Pro = textBox3.Text;
             string Student_in_group_STime = dateTimePicker1.Value.Date.ToShortDateString();
+            string Student_in_group_OTime = dateTimePicker2.Value.Date.ToShortDateString();
+            string Student_between_group_STime = dateTimePicker3.Value.Date.ToShortDateString();
+            string Student_between_group_OTime = dateTimePicker4.Value.Date.ToShortDateString();
+            string Teacher_independ_STime= dateTimePicker5.Value.Date.ToShortDateString();
+            string Teacher_independ_OTime = dateTimePicker5.Value.Date.ToShortDateString();
             mysql.Open();
-            String sqlUpdate = "update teacher_adjust set Student_in_group_Pro = '" + textBox1.Text + "',Student_between_group_Pro='" + textBox2.Text + " ',Teacher_independ_Pro='" + textBox3.Text + " ',Student_in_group_STime='" + dateTimePicker1.Value + " ' where Regulator_ID = " + textBox4.Text;
+            String sqlUpdate = "update teacher_adjust set Student_in_group_Pro = '" + textBox1.Text + "',Student_between_group_Pro='" + textBox2.Text + " ',Teacher_independ_Pro='" + textBox3.Text + " ',Student_in_group_STime='" + dateTimePicker1.Value.Date.ToShortDateString()
+                                + "',Student_in_group_OTime='" + dateTimePicker2.Value.Date.ToShortDateString() + "',Student_between_group_STime='" + dateTimePicker3.Value.Date.ToShortDateString() + "',Student_between_group_OTime='" + dateTimePicker4.Value.Date.ToShortDateString()
+                                + "',Teacher_independ_STime='" + dateTimePicker5.Value.Date.ToShortDateString() + "',Teacher_independ_OTime='" + dateTimePicker6.Value.Date.ToShortDateString() + " ' where Regulator_ID = " + textBox4.Text;
             MySqlCommand mySqlCommand = getSqlCommand1(sqlUpdate, mysql);
             getUpdate(mySqlCommand);
             mysql.Close();
