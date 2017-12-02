@@ -75,6 +75,9 @@ namespace StudentScore
             String sqlUpdate = "update teacher_information set Academe = '" + textBox3.Text + "',Teacher_Password='" + textBox5.Text + " ' where Teacher_ID = " + textBox1.Text;
             MySqlCommand mySqlCommand = getSqlCommand1(sqlUpdate, mysql);
             getUpdate(mySqlCommand);
+            String sqlUpdate2 = "update syuser set Password='" + textBox5.Text + " ' where Use_ID = " + textBox1.Text;
+            MySqlCommand mySqlCommand2 = getSqlCommand(sqlUpdate2, mysql);
+            getUpdate(mySqlCommand2);
             mysql.Close();
         }
     }

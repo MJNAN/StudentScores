@@ -30,18 +30,6 @@ namespace StudentScore
             MySqlCommand mySqlCommand = new MySqlCommand(sql, mysql);
             return mySqlCommand;
         }
-
-        private void Student_Information_Load(object sender, EventArgs e)
-        {
-            mysql.Open();
-            String sqlSearch = "SELECT Group FROM student_information WHERE Student_ID='" + Program.student_id + "'";
-            MySqlCommand mySqlCommand = getSqlCommand(sqlSearch, mysql);
-            textBox5.Text=getResultset(mySqlCommand);
-            mysql.Close();
-            textBox1.Text = Program.student_id;
-            textBox2.Text = Program.student_name;     
-            mysql = getMySqlCon();
-        }
         public static string getResultset(MySqlCommand mySqlCommand)
         {
             MySqlDataReader reader = mySqlCommand.ExecuteReader();
@@ -69,6 +57,15 @@ namespace StudentScore
             }
             return "";
         }
+       
+        private void Student_Information_Load(object sender, EventArgs e)
+        {
+            mysql = getMySqlCon();
+            textBox1.Text = Program.student_id;
+            textBox2.Text = Program.student_name;
+            
+        }
+
         public static void getUpdate(MySqlCommand mySqlCommand)
         {
             try
@@ -93,9 +90,12 @@ namespace StudentScore
             string Major = textBox4.Text;
             string Student_Password = textBox6.Text;
             mysql.Open();
-            String sqlUpdate = "update student_information set Academe = '" + textBox3.Text + "',Major='" + textBox4.Text + " ',Student_Password='" + textBox6.Text + " ' where Student_ID = " + textBox1.Text;
-            MySqlCommand mySqlCommand = getSqlCommand(sqlUpdate, mysql);
-            getUpdate(mySqlCommand);
+            String sqlUpdate1 = "update student_information set Academe = '" + textBox3.Text + "',Major='" + textBox4.Text + " ',Student_Password='" + textBox6.Text + " ' where Student_ID = " + textBox1.Text;
+            MySqlCommand mySqlCommand1 = getSqlCommand(sqlUpdate1, mysql);
+            getUpdate(mySqlCommand1);
+            String sqlUpdate2 = "update syuser set Password='" + textBox6.Text + " ' where Use_ID = " + textBox1.Text;
+            MySqlCommand mySqlCommand2 = getSqlCommand(sqlUpdate2, mysql);
+            getUpdate(mySqlCommand2);
             mysql.Close();
         }
     }

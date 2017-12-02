@@ -126,7 +126,6 @@ namespace StudentScore
                     {
                         Program.student_id = reader.GetString(0);
                         Program.student_name = reader.GetString(1);
-
                     }
                     else
                     {
