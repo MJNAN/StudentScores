@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50717
 File Encoding         : 65001
 
-Date: 2017-12-03 23:45:31
+Date: 2017-12-04 00:27:59
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -96,26 +96,26 @@ CREATE TABLE `student_in_group` (
 -- ----------------------------
 -- Records of student_in_group
 -- ----------------------------
-INSERT INTO `student_in_group` VALUES ('105032015001', '王五', null, '105032015001', '王五', '1', '75');
-INSERT INTO `student_in_group` VALUES ('105032015001', '王五', null, '105032015002', '赵六', '1', '75');
-INSERT INTO `student_in_group` VALUES ('105032015001', '王五', null, '105032015005', '陈一', '1', '100');
-INSERT INTO `student_in_group` VALUES ('105032015001', '王五', null, '105032015006', '胡一天', '1', '100');
-INSERT INTO `student_in_group` VALUES ('105032015002', '赵六', null, '105032015001', '王五', '1', '75');
-INSERT INTO `student_in_group` VALUES ('105032015002', '赵六', null, '105032015002', '赵六', '2', '75');
-INSERT INTO `student_in_group` VALUES ('105032015002', '赵六', null, '105032015005', '陈一', '5', '100');
-INSERT INTO `student_in_group` VALUES ('105032015002', '赵六', null, '105032015006', '胡一天', '6', '100');
+INSERT INTO `student_in_group` VALUES ('105032015001', '王五', null, '105032015001', '王五', '1', null);
+INSERT INTO `student_in_group` VALUES ('105032015001', '王五', null, '105032015002', '赵六', '1', null);
+INSERT INTO `student_in_group` VALUES ('105032015001', '王五', null, '105032015005', '陈一', '1', null);
+INSERT INTO `student_in_group` VALUES ('105032015001', '王五', null, '105032015006', '胡一天', '1', null);
+INSERT INTO `student_in_group` VALUES ('105032015002', '赵六', null, '105032015001', '王五', '1', null);
+INSERT INTO `student_in_group` VALUES ('105032015002', '赵六', null, '105032015002', '赵六', '2', null);
+INSERT INTO `student_in_group` VALUES ('105032015002', '赵六', null, '105032015005', '陈一', '5', null);
+INSERT INTO `student_in_group` VALUES ('105032015002', '赵六', null, '105032015006', '胡一天', '6', null);
 INSERT INTO `student_in_group` VALUES ('105032015003', '张三', null, '105032015003', '张三', '2', null);
 INSERT INTO `student_in_group` VALUES ('105032015003', '张三', null, '105032015004', '李四', '2', null);
 INSERT INTO `student_in_group` VALUES ('105032015004', '李四', null, '105032015003', '张三', '2', null);
 INSERT INTO `student_in_group` VALUES ('105032015004', '李四', null, '105032015004', '李四', '2', null);
-INSERT INTO `student_in_group` VALUES ('105032015005', '陈一', null, '105032015001', '王五', '1', '75');
-INSERT INTO `student_in_group` VALUES ('105032015005', '陈一', null, '105032015002', '赵六', '2', '75');
-INSERT INTO `student_in_group` VALUES ('105032015005', '陈一', null, '105032015005', '陈一', '5', '100');
-INSERT INTO `student_in_group` VALUES ('105032015005', '陈一', null, '105032015006', '胡一天', '6', '100');
-INSERT INTO `student_in_group` VALUES ('105032015006', '胡一天', null, '105032015001', '王五', '1', '75');
-INSERT INTO `student_in_group` VALUES ('105032015006', '胡一天', null, '105032015002', '赵六', '2', '75');
-INSERT INTO `student_in_group` VALUES ('105032015006', '胡一天', null, '105032015005', '陈一', '5', '100');
-INSERT INTO `student_in_group` VALUES ('105032015006', '胡一天', null, '105032015006', '胡一天', '6', '100');
+INSERT INTO `student_in_group` VALUES ('105032015005', '陈一', null, '105032015001', '王五', '1', null);
+INSERT INTO `student_in_group` VALUES ('105032015005', '陈一', null, '105032015002', '赵六', '2', null);
+INSERT INTO `student_in_group` VALUES ('105032015005', '陈一', null, '105032015005', '陈一', '5', null);
+INSERT INTO `student_in_group` VALUES ('105032015005', '陈一', null, '105032015006', '胡一天', '6', null);
+INSERT INTO `student_in_group` VALUES ('105032015006', '胡一天', null, '105032015001', '王五', '1', null);
+INSERT INTO `student_in_group` VALUES ('105032015006', '胡一天', null, '105032015002', '赵六', '2', null);
+INSERT INTO `student_in_group` VALUES ('105032015006', '胡一天', null, '105032015005', '陈一', '5', null);
+INSERT INTO `student_in_group` VALUES ('105032015006', '胡一天', null, '105032015006', '胡一天', '6', null);
 
 -- ----------------------------
 -- Table structure for student_total
