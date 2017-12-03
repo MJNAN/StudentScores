@@ -125,26 +125,26 @@
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(200, 30);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(264, 32);
             this.toolStripMenuItem2.Text = "学生信息完善";
             this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
             // 
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(200, 30);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(264, 32);
             this.toolStripMenuItem3.Text = "学生组内互评";
             // 
             // toolStripMenuItem4
             // 
             this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-            this.toolStripMenuItem4.Size = new System.Drawing.Size(200, 30);
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(264, 32);
             this.toolStripMenuItem4.Text = "学生组间互评";
             // 
             // 学生成绩查看ToolStripMenuItem
             // 
             this.学生成绩查看ToolStripMenuItem.Name = "学生成绩查看ToolStripMenuItem";
-            this.学生成绩查看ToolStripMenuItem.Size = new System.Drawing.Size(200, 30);
+            this.学生成绩查看ToolStripMenuItem.Size = new System.Drawing.Size(264, 32);
             this.学生成绩查看ToolStripMenuItem.Text = "学生成绩查看";
             // 
             // Student
@@ -157,7 +157,7 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Student";
-            this.Text = "学生成绩评定";
+            this.Text = "学生成绩评定系统";
             this.Load += new System.EventHandler(this.Student_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
