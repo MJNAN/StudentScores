@@ -10,29 +10,10 @@ Target Server Type    : MYSQL
 Target Server Version : 50717
 File Encoding         : 65001
 
-Date: 2017-12-04 00:27:59
+Date: 2017-12-04 22:35:44
 */
 
 SET FOREIGN_KEY_CHECKS=0;
-
--- ----------------------------
--- Table structure for student_between group
--- ----------------------------
-DROP TABLE IF EXISTS `student_between group`;
-CREATE TABLE `student_between group` (
-  `Tester_ID` varchar(12) NOT NULL COMMENT '测评人学号',
-  `Tester_Name` varchar(50) DEFAULT NULL COMMENT '测评人姓名',
-  `Tester_Evalu` varchar(2) DEFAULT NULL COMMENT '测评状态',
-  `EvaluObj_ID` varchar(12) NOT NULL COMMENT '测评对象学号',
-  `EvaluObj_Name` varchar(50) DEFAULT NULL COMMENT '测评对象姓名',
-  `Group` int(5) DEFAULT NULL COMMENT '组别',
-  `Student_between_group_total` decimal(5,0) DEFAULT NULL COMMENT '学生组间互评总分',
-  PRIMARY KEY (`Tester_ID`,`EvaluObj_ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of student_between group
--- ----------------------------
 
 -- ----------------------------
 -- Table structure for student_between_group
@@ -64,7 +45,7 @@ CREATE TABLE `student_information` (
   `Major` varchar(24) DEFAULT NULL COMMENT '所属专业',
   `Group` varchar(5) DEFAULT NULL COMMENT '组别',
   `Status` varchar(8) DEFAULT NULL COMMENT '身份',
-  `Student_Password` varchar(14) DEFAULT NULL COMMENT '学生密码',
+  `Student_Password` varchar(3) DEFAULT NULL COMMENT '学生密码',
   PRIMARY KEY (`Student_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -101,21 +82,21 @@ INSERT INTO `student_in_group` VALUES ('105032015001', '王五', null, '10503201
 INSERT INTO `student_in_group` VALUES ('105032015001', '王五', null, '105032015005', '陈一', '1', null);
 INSERT INTO `student_in_group` VALUES ('105032015001', '王五', null, '105032015006', '胡一天', '1', null);
 INSERT INTO `student_in_group` VALUES ('105032015002', '赵六', null, '105032015001', '王五', '1', null);
-INSERT INTO `student_in_group` VALUES ('105032015002', '赵六', null, '105032015002', '赵六', '2', null);
-INSERT INTO `student_in_group` VALUES ('105032015002', '赵六', null, '105032015005', '陈一', '5', null);
-INSERT INTO `student_in_group` VALUES ('105032015002', '赵六', null, '105032015006', '胡一天', '6', null);
+INSERT INTO `student_in_group` VALUES ('105032015002', '赵六', null, '105032015002', '赵六', '1', null);
+INSERT INTO `student_in_group` VALUES ('105032015002', '赵六', null, '105032015005', '陈一', '1', null);
+INSERT INTO `student_in_group` VALUES ('105032015002', '赵六', null, '105032015006', '胡一天', '1', null);
 INSERT INTO `student_in_group` VALUES ('105032015003', '张三', null, '105032015003', '张三', '2', null);
 INSERT INTO `student_in_group` VALUES ('105032015003', '张三', null, '105032015004', '李四', '2', null);
 INSERT INTO `student_in_group` VALUES ('105032015004', '李四', null, '105032015003', '张三', '2', null);
 INSERT INTO `student_in_group` VALUES ('105032015004', '李四', null, '105032015004', '李四', '2', null);
 INSERT INTO `student_in_group` VALUES ('105032015005', '陈一', null, '105032015001', '王五', '1', null);
-INSERT INTO `student_in_group` VALUES ('105032015005', '陈一', null, '105032015002', '赵六', '2', null);
-INSERT INTO `student_in_group` VALUES ('105032015005', '陈一', null, '105032015005', '陈一', '5', null);
-INSERT INTO `student_in_group` VALUES ('105032015005', '陈一', null, '105032015006', '胡一天', '6', null);
+INSERT INTO `student_in_group` VALUES ('105032015005', '陈一', null, '105032015002', '赵六', '1', null);
+INSERT INTO `student_in_group` VALUES ('105032015005', '陈一', null, '105032015005', '陈一', '1', null);
+INSERT INTO `student_in_group` VALUES ('105032015005', '陈一', null, '105032015006', '胡一天', '1', null);
 INSERT INTO `student_in_group` VALUES ('105032015006', '胡一天', null, '105032015001', '王五', '1', null);
-INSERT INTO `student_in_group` VALUES ('105032015006', '胡一天', null, '105032015002', '赵六', '2', null);
-INSERT INTO `student_in_group` VALUES ('105032015006', '胡一天', null, '105032015005', '陈一', '5', null);
-INSERT INTO `student_in_group` VALUES ('105032015006', '胡一天', null, '105032015006', '胡一天', '6', null);
+INSERT INTO `student_in_group` VALUES ('105032015006', '胡一天', null, '105032015002', '赵六', '1', null);
+INSERT INTO `student_in_group` VALUES ('105032015006', '胡一天', null, '105032015005', '陈一', '1', null);
+INSERT INTO `student_in_group` VALUES ('105032015006', '胡一天', null, '105032015006', '胡一天', '1', null);
 
 -- ----------------------------
 -- Table structure for student_total
@@ -142,7 +123,7 @@ CREATE TABLE `student_total` (
 DROP TABLE IF EXISTS `syuser`;
 CREATE TABLE `syuser` (
   `Use_ID` varchar(12) NOT NULL COMMENT '用户名（学号/工号/电话号码）',
-  `Password` varchar(50) NOT NULL COMMENT '用户密码',
+  `Password` varchar(3) NOT NULL COMMENT '用户密码',
   `Use_Status` varchar(50) NOT NULL COMMENT '身份（教师/学生)',
   PRIMARY KEY (`Use_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -230,24 +211,6 @@ INSERT INTO `teacher_independent` VALUES ('1052015002', '李奎', null, '1050320
 INSERT INTO `teacher_independent` VALUES ('1052015002', '李奎', null, '105032015006', '胡一天', null);
 
 -- ----------------------------
--- Table structure for teacher_independet
--- ----------------------------
-DROP TABLE IF EXISTS `teacher_independet`;
-CREATE TABLE `teacher_independet` (
-  `Tester_ID` varchar(12) NOT NULL COMMENT '测评人工号',
-  `Tester_Name` varchar(10) DEFAULT NULL COMMENT '测评人姓名',
-  `Tester_Evalu` varchar(2) DEFAULT NULL COMMENT '测评状态',
-  `EvaluObj_ID` varchar(12) NOT NULL COMMENT '测评对象学号',
-  `EvaluObj_Name` varchar(10) DEFAULT NULL COMMENT '测评对象姓名',
-  `Teacher_Total` decimal(5,0) DEFAULT NULL COMMENT '教师独立评分总分',
-  PRIMARY KEY (`Tester_ID`,`EvaluObj_ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of teacher_independet
--- ----------------------------
-
--- ----------------------------
 -- Table structure for teacher_information
 -- ----------------------------
 DROP TABLE IF EXISTS `teacher_information`;
@@ -256,7 +219,7 @@ CREATE TABLE `teacher_information` (
   `Teacher_Name` varchar(10) DEFAULT NULL COMMENT '教师姓名',
   `Academe` varchar(24) DEFAULT NULL COMMENT '所属学院',
   `Status` varchar(8) DEFAULT NULL COMMENT '身份',
-  `Teacher_Password` varchar(14) DEFAULT NULL COMMENT '教师密码',
+  `Teacher_Password` varchar(3) DEFAULT NULL COMMENT '教师密码',
   PRIMARY KEY (`Teacher_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
