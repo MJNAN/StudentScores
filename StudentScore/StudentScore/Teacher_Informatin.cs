@@ -53,6 +53,7 @@ namespace StudentScore
 
         private void Teacher_Informatin_Load(object sender, EventArgs e)
         {
+            comboBox1.SelectedIndex = 0;
             textBox1.Text = Program.teacher_id;
             textBox2.Text = Program.teacher_name;
             mysql = getMySqlCon();
@@ -69,10 +70,10 @@ namespace StudentScore
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string Academe = textBox3.Text;
+            string Academe = comboBox1.Text;
             string Teacher_Password= textBox5.Text;
             mysql.Open();
-            String sqlUpdate = "update teacher_information set Academe = '" + textBox3.Text + "',Teacher_Password='" + textBox5.Text + " ' where Teacher_ID = " + textBox1.Text;
+            String sqlUpdate = "update teacher_information set Academe = '" + comboBox1.Text + "',Teacher_Password='" + textBox5.Text + " ' where Teacher_ID = " + textBox1.Text;
             MySqlCommand mySqlCommand = getSqlCommand1(sqlUpdate, mysql);
             getUpdate(mySqlCommand);
             String sqlUpdate2 = "update syuser set Password='" + textBox5.Text + " ' where Use_ID = " + textBox1.Text;

@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50717
 File Encoding         : 65001
 
-Date: 2017-12-04 22:35:44
+Date: 2017-12-15 22:48:00
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -26,13 +26,53 @@ CREATE TABLE `student_between_group` (
   `EvaluObj_ID` decimal(12,0) NOT NULL COMMENT '测评对象学号',
   `EvaluObj_Name` varchar(50) DEFAULT NULL COMMENT '测评对象姓名',
   `Group` int(5) DEFAULT NULL COMMENT '组别',
-  `Student_between group_total` decimal(5,0) DEFAULT NULL COMMENT '学生组间互评总分',
+  `Student_between_group_total` decimal(5,0) DEFAULT NULL COMMENT '学生组间互评总分',
   PRIMARY KEY (`Tester_ID`,`EvaluObj_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of student_between_group
 -- ----------------------------
+INSERT INTO `student_between_group` VALUES ('105032015001', '王五', null, '105032015003', '张三', '2', '80');
+INSERT INTO `student_between_group` VALUES ('105032015001', '王五', '', '105032015004', '李四', '2', '90');
+INSERT INTO `student_between_group` VALUES ('105032015001', '王五', null, '105032015007', '江辰', '3', '70');
+INSERT INTO `student_between_group` VALUES ('105032015001', '王五', null, '105032015008', '陈小希', '3', '100');
+INSERT INTO `student_between_group` VALUES ('105032015002', '赵六', null, '105032015003', '张三', '2', null);
+INSERT INTO `student_between_group` VALUES ('105032015002', '赵六', null, '105032015004', '李四', '2', null);
+INSERT INTO `student_between_group` VALUES ('105032015002', '赵六', null, '105032015007', '江辰', '3', null);
+INSERT INTO `student_between_group` VALUES ('105032015002', '赵六', null, '105032015008', '陈小希', '3', null);
+INSERT INTO `student_between_group` VALUES ('105032015003', '张三', null, '105032015001', '王五', '1', null);
+INSERT INTO `student_between_group` VALUES ('105032015003', '张三', null, '105032015002', '赵六', '1', null);
+INSERT INTO `student_between_group` VALUES ('105032015003', '张三', null, '105032015005', '陈一', '1', null);
+INSERT INTO `student_between_group` VALUES ('105032015003', '张三', null, '105032015006', '胡一天', '1', null);
+INSERT INTO `student_between_group` VALUES ('105032015003', '张三', null, '105032015007', '江辰', '3', null);
+INSERT INTO `student_between_group` VALUES ('105032015003', '张三', null, '105032015008', '陈小希', '3', null);
+INSERT INTO `student_between_group` VALUES ('105032015004', '李四', null, '105032015001', '王五', '1', null);
+INSERT INTO `student_between_group` VALUES ('105032015004', '李四', null, '105032015002', '赵六', '1', null);
+INSERT INTO `student_between_group` VALUES ('105032015004', '李四', null, '105032015005', '陈一', '1', null);
+INSERT INTO `student_between_group` VALUES ('105032015004', '李四', null, '105032015006', '胡一天', '1', null);
+INSERT INTO `student_between_group` VALUES ('105032015004', '李四', null, '105032015007', '江辰', '3', null);
+INSERT INTO `student_between_group` VALUES ('105032015004', '李四', null, '105032015008', '陈小希', '3', null);
+INSERT INTO `student_between_group` VALUES ('105032015005', '陈一', null, '105032015003', '张三', '2', null);
+INSERT INTO `student_between_group` VALUES ('105032015005', '陈一', null, '105032015004', '李四', '2', null);
+INSERT INTO `student_between_group` VALUES ('105032015005', '陈一', null, '105032015007', '江辰', '3', null);
+INSERT INTO `student_between_group` VALUES ('105032015005', '陈一', null, '105032015008', '陈小希', '3', null);
+INSERT INTO `student_between_group` VALUES ('105032015006', '胡一天', null, '105032015003', '张三', '2', null);
+INSERT INTO `student_between_group` VALUES ('105032015006', '胡一天', null, '105032015004', '李四', '2', null);
+INSERT INTO `student_between_group` VALUES ('105032015006', '胡一天', null, '105032015007', '江辰', '3', null);
+INSERT INTO `student_between_group` VALUES ('105032015006', '胡一天', null, '105032015008', '陈小希', '3', null);
+INSERT INTO `student_between_group` VALUES ('105032015007', '江辰', null, '105032015001', '王五', '1', null);
+INSERT INTO `student_between_group` VALUES ('105032015007', '江辰', null, '105032015002', '赵六', '1', null);
+INSERT INTO `student_between_group` VALUES ('105032015007', '江辰', null, '105032015003', '张三', '2', null);
+INSERT INTO `student_between_group` VALUES ('105032015007', '江辰', null, '105032015004', '李四', '2', null);
+INSERT INTO `student_between_group` VALUES ('105032015007', '江辰', null, '105032015005', '陈一', '1', null);
+INSERT INTO `student_between_group` VALUES ('105032015007', '江辰', null, '105032015006', '胡一天', '1', null);
+INSERT INTO `student_between_group` VALUES ('105032015008', '陈小希', null, '105032015001', '王五', '1', null);
+INSERT INTO `student_between_group` VALUES ('105032015008', '陈小希', null, '105032015002', '赵六', '1', null);
+INSERT INTO `student_between_group` VALUES ('105032015008', '陈小希', null, '105032015003', '张三', '2', null);
+INSERT INTO `student_between_group` VALUES ('105032015008', '陈小希', null, '105032015004', '李四', '2', null);
+INSERT INTO `student_between_group` VALUES ('105032015008', '陈小希', null, '105032015005', '陈一', '1', null);
+INSERT INTO `student_between_group` VALUES ('105032015008', '陈小希', null, '105032015006', '胡一天', '1', null);
 
 -- ----------------------------
 -- Table structure for student_information
@@ -52,12 +92,18 @@ CREATE TABLE `student_information` (
 -- ----------------------------
 -- Records of student_information
 -- ----------------------------
-INSERT INTO `student_information` VALUES ('105032015001', '王五', 's', 's ', '1', 'Student', 'abc');
-INSERT INTO `student_information` VALUES ('105032015002', '赵六', '', '', '1', 'Student', 'bcd');
+INSERT INTO `student_information` VALUES ('105032015001', '王五', '数学与信息学院', '计算机科学与技术 ', '1', 'Student', 'opq');
+INSERT INTO `student_information` VALUES ('105032015002', '赵六', '', '', '1', 'Student', 'qwe');
 INSERT INTO `student_information` VALUES ('105032015003', '张三', null, null, '2', 'Student', 'efg');
 INSERT INTO `student_information` VALUES ('105032015004', '李四', null, null, '2', 'Student', 'dfg');
 INSERT INTO `student_information` VALUES ('105032015005', '陈一', null, null, '1', 'Student', 'abc');
-INSERT INTO `student_information` VALUES ('105032015006', '胡一天', null, null, '1', 'Student', 'efg');
+INSERT INTO `student_information` VALUES ('105032015006', '胡一天', null, null, '3', 'Student', 'efg');
+INSERT INTO `student_information` VALUES ('105032015007', '江辰', null, null, '3', 'Student', 'abc');
+INSERT INTO `student_information` VALUES ('105032015008', '陈小希', null, null, '3', 'Student', 'abc');
+INSERT INTO `student_information` VALUES ('105032015009', '高楠', null, null, '2', 'Student', '123');
+INSERT INTO `student_information` VALUES ('105032015010', '廖臻珺', null, null, '4', 'Student', '123');
+INSERT INTO `student_information` VALUES ('105032015011', '陈清棉', null, null, '4', 'Student', '123');
+INSERT INTO `student_information` VALUES ('105032015012', '朱诗东', null, null, '4', 'Student', '123');
 
 -- ----------------------------
 -- Table structure for student_in_group
@@ -80,11 +126,9 @@ CREATE TABLE `student_in_group` (
 INSERT INTO `student_in_group` VALUES ('105032015001', '王五', null, '105032015001', '王五', '1', null);
 INSERT INTO `student_in_group` VALUES ('105032015001', '王五', null, '105032015002', '赵六', '1', null);
 INSERT INTO `student_in_group` VALUES ('105032015001', '王五', null, '105032015005', '陈一', '1', null);
-INSERT INTO `student_in_group` VALUES ('105032015001', '王五', null, '105032015006', '胡一天', '1', null);
 INSERT INTO `student_in_group` VALUES ('105032015002', '赵六', null, '105032015001', '王五', '1', null);
 INSERT INTO `student_in_group` VALUES ('105032015002', '赵六', null, '105032015002', '赵六', '1', null);
 INSERT INTO `student_in_group` VALUES ('105032015002', '赵六', null, '105032015005', '陈一', '1', null);
-INSERT INTO `student_in_group` VALUES ('105032015002', '赵六', null, '105032015006', '胡一天', '1', null);
 INSERT INTO `student_in_group` VALUES ('105032015003', '张三', null, '105032015003', '张三', '2', null);
 INSERT INTO `student_in_group` VALUES ('105032015003', '张三', null, '105032015004', '李四', '2', null);
 INSERT INTO `student_in_group` VALUES ('105032015004', '李四', null, '105032015003', '张三', '2', null);
@@ -92,11 +136,28 @@ INSERT INTO `student_in_group` VALUES ('105032015004', '李四', null, '10503201
 INSERT INTO `student_in_group` VALUES ('105032015005', '陈一', null, '105032015001', '王五', '1', null);
 INSERT INTO `student_in_group` VALUES ('105032015005', '陈一', null, '105032015002', '赵六', '1', null);
 INSERT INTO `student_in_group` VALUES ('105032015005', '陈一', null, '105032015005', '陈一', '1', null);
-INSERT INTO `student_in_group` VALUES ('105032015005', '陈一', null, '105032015006', '胡一天', '1', null);
 INSERT INTO `student_in_group` VALUES ('105032015006', '胡一天', null, '105032015001', '王五', '1', null);
 INSERT INTO `student_in_group` VALUES ('105032015006', '胡一天', null, '105032015002', '赵六', '1', null);
 INSERT INTO `student_in_group` VALUES ('105032015006', '胡一天', null, '105032015005', '陈一', '1', null);
 INSERT INTO `student_in_group` VALUES ('105032015006', '胡一天', null, '105032015006', '胡一天', '1', null);
+INSERT INTO `student_in_group` VALUES ('105032015007', '江辰', null, '105032015006', '胡一天', '3', null);
+INSERT INTO `student_in_group` VALUES ('105032015007', '江辰', null, '105032015007', '江辰', '3', null);
+INSERT INTO `student_in_group` VALUES ('105032015007', '江辰', null, '105032015008', '陈小希', '3', null);
+INSERT INTO `student_in_group` VALUES ('105032015008', '陈小希', null, '105032015006', '胡一天', '3', null);
+INSERT INTO `student_in_group` VALUES ('105032015008', '陈小希', null, '105032015007', '江辰', '3', null);
+INSERT INTO `student_in_group` VALUES ('105032015008', '陈小希', null, '105032015008', '陈小希', '3', null);
+INSERT INTO `student_in_group` VALUES ('105032015009', '高楠', null, '105032015004', '张三', '2', null);
+INSERT INTO `student_in_group` VALUES ('105032015009', '高楠', null, '105032015005', '李四', '2', null);
+INSERT INTO `student_in_group` VALUES ('105032015009', '高楠', null, '105032015009', '高楠', '2', null);
+INSERT INTO `student_in_group` VALUES ('105032015010', '廖臻珺', null, '105032015010', '廖臻珺', '4', null);
+INSERT INTO `student_in_group` VALUES ('105032015010', '廖臻珺', null, '105032015011', '陈清棉', '4', null);
+INSERT INTO `student_in_group` VALUES ('105032015010', '廖臻珺', null, '105032015012', '朱诗东', '4', null);
+INSERT INTO `student_in_group` VALUES ('105032015011', '陈清棉', null, '105032015010', '廖臻珺', '4', null);
+INSERT INTO `student_in_group` VALUES ('105032015011', '陈清棉', null, '105032015011', '陈清棉', '4', null);
+INSERT INTO `student_in_group` VALUES ('105032015011', '陈清棉', null, '105032015012', '朱诗东', '4', null);
+INSERT INTO `student_in_group` VALUES ('105032015012', '朱诗东', null, '105032015010', '廖臻珺', '4', null);
+INSERT INTO `student_in_group` VALUES ('105032015012', '朱诗东', null, '105032015011', '陈清棉', '4', null);
+INSERT INTO `student_in_group` VALUES ('105032015012', '朱诗东', null, '105032015012', '朱诗东', '4', null);
 
 -- ----------------------------
 -- Table structure for student_total
@@ -131,13 +192,19 @@ CREATE TABLE `syuser` (
 -- ----------------------------
 -- Records of syuser
 -- ----------------------------
-INSERT INTO `syuser` VALUES ('105032015001', 'abc', 'Student');
-INSERT INTO `syuser` VALUES ('105032015002', 'bcd', 'Student');
+INSERT INTO `syuser` VALUES ('105032015001', 'opq', 'Student');
+INSERT INTO `syuser` VALUES ('105032015002', 'qwe', 'Student');
 INSERT INTO `syuser` VALUES ('105032015003', 'efg', 'Student');
 INSERT INTO `syuser` VALUES ('105032015004', '123', 'Student');
 INSERT INTO `syuser` VALUES ('105032015005', '456', 'Student');
 INSERT INTO `syuser` VALUES ('105032015006', '789', 'Student');
-INSERT INTO `syuser` VALUES ('1052015001', 'abc', 'Teacher');
+INSERT INTO `syuser` VALUES ('105032015007', 'abc', 'Student');
+INSERT INTO `syuser` VALUES ('105032015008', 'abc', 'Student');
+INSERT INTO `syuser` VALUES ('105032015009', '123', 'Student');
+INSERT INTO `syuser` VALUES ('105032015010', '123', 'Student');
+INSERT INTO `syuser` VALUES ('105032015011', '123', 'Student');
+INSERT INTO `syuser` VALUES ('105032015012', '123', 'Student');
+INSERT INTO `syuser` VALUES ('1052015001', 'opq', 'Teacher');
 INSERT INTO `syuser` VALUES ('1052015002', 'cde', 'Teacher');
 
 -- ----------------------------
@@ -162,7 +229,7 @@ CREATE TABLE `teacher_adjust` (
 -- ----------------------------
 -- Records of teacher_adjust
 -- ----------------------------
-INSERT INTO `teacher_adjust` VALUES ('1052015001', '张三', '10', '20', '70', '2017-12-02 00:00:00', '2017-12-03 00:00:00', '2017-12-04 00:00:00', '2017-12-05 00:00:00', '2017-12-06 00:00:00', '2017-12-07 00:00:00');
+INSERT INTO `teacher_adjust` VALUES ('1052015001', '张三', '10', '40', '50', '2017-12-01 00:00:00', '2017-12-04 00:00:00', '2017-12-04 00:00:00', '2017-12-07 00:00:00', '2017-12-07 00:00:00', '2017-12-10 00:00:00');
 
 -- ----------------------------
 -- Table structure for teacher_admin
@@ -197,18 +264,30 @@ CREATE TABLE `teacher_independent` (
 -- ----------------------------
 -- Records of teacher_independent
 -- ----------------------------
-INSERT INTO `teacher_independent` VALUES ('1052015001', '张文', null, '105032015001', '王五', '10');
-INSERT INTO `teacher_independent` VALUES ('1052015001', '张文', null, '105032015002', '赵六', null);
-INSERT INTO `teacher_independent` VALUES ('1052015001', '张文', null, '105032015003', '张三', null);
-INSERT INTO `teacher_independent` VALUES ('1052015001', '张文', null, '105032015004', '李四', null);
+INSERT INTO `teacher_independent` VALUES ('1052015001', '张文', null, '105032015001', '王五', '90');
+INSERT INTO `teacher_independent` VALUES ('1052015001', '张文', null, '105032015002', '赵六', '80');
+INSERT INTO `teacher_independent` VALUES ('1052015001', '张文', null, '105032015003', '张三', '70');
+INSERT INTO `teacher_independent` VALUES ('1052015001', '张文', null, '105032015004', '李四', '60');
 INSERT INTO `teacher_independent` VALUES ('1052015001', '张文', null, '105032015005', '陈一', null);
-INSERT INTO `teacher_independent` VALUES ('1052015001', '张文', null, '105032015006', '胡一天', null);
+INSERT INTO `teacher_independent` VALUES ('1052015001', '张文', null, '105032015006', '胡一天', '100');
+INSERT INTO `teacher_independent` VALUES ('1052015001', '张文', null, '105032015007', '江辰', null);
+INSERT INTO `teacher_independent` VALUES ('1052015001', '张文', null, '105032015008', '陈小希', null);
+INSERT INTO `teacher_independent` VALUES ('1052015001', '张文', null, '105032015009', '高楠', null);
+INSERT INTO `teacher_independent` VALUES ('1052015001', '张文', null, '105032015010', '廖臻珺', null);
+INSERT INTO `teacher_independent` VALUES ('1052015001', '张文', null, '105032015011', '陈清棉', null);
+INSERT INTO `teacher_independent` VALUES ('1052015001', '张文', null, '105032015012', '朱诗东', null);
 INSERT INTO `teacher_independent` VALUES ('1052015002', '李奎', null, '105032015001', '王五', null);
-INSERT INTO `teacher_independent` VALUES ('1052015002', '李奎', null, '105032015002', '赵六', null);
-INSERT INTO `teacher_independent` VALUES ('1052015002', '李奎', null, '105032015003', '张三', null);
-INSERT INTO `teacher_independent` VALUES ('1052015002', '李奎', null, '105032015004', '李四', null);
+INSERT INTO `teacher_independent` VALUES ('1052015002', '李奎', null, '105032015002', '赵六', '80');
+INSERT INTO `teacher_independent` VALUES ('1052015002', '李奎', null, '105032015003', '张三', '70');
+INSERT INTO `teacher_independent` VALUES ('1052015002', '李奎', null, '105032015004', '李四', '60');
 INSERT INTO `teacher_independent` VALUES ('1052015002', '李奎', null, '105032015005', '陈一', null);
-INSERT INTO `teacher_independent` VALUES ('1052015002', '李奎', null, '105032015006', '胡一天', null);
+INSERT INTO `teacher_independent` VALUES ('1052015002', '李奎', null, '105032015006', '胡一天', '100');
+INSERT INTO `teacher_independent` VALUES ('1052015002', '李奎', null, '105032015007', '江辰', null);
+INSERT INTO `teacher_independent` VALUES ('1052015002', '李奎', null, '105032015008', '陈小希', null);
+INSERT INTO `teacher_independent` VALUES ('1052015002', '李奎', null, '105032015009', '高楠', null);
+INSERT INTO `teacher_independent` VALUES ('1052015002', '李奎', null, '105032015010', '廖臻珺', null);
+INSERT INTO `teacher_independent` VALUES ('1052015002', '李奎', null, '105032015011', '陈清棉', null);
+INSERT INTO `teacher_independent` VALUES ('1052015002', '李奎', null, '105032015012', '朱诗东', null);
 
 -- ----------------------------
 -- Table structure for teacher_information
@@ -226,5 +305,5 @@ CREATE TABLE `teacher_information` (
 -- ----------------------------
 -- Records of teacher_information
 -- ----------------------------
-INSERT INTO `teacher_information` VALUES ('1052015001', '张文', '数学与信息学院', 'Teacher', 'abc');
+INSERT INTO `teacher_information` VALUES ('1052015001', '张文', '数信', 'Teacher', 'opq');
 INSERT INTO `teacher_information` VALUES ('1052015002', '李奎', null, 'Teacher', 'cde');

@@ -339,7 +339,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Teacher_Adjust";
-            this.Text = "学生成绩评定系统";
+            this.Text = "学生成绩评定";
             this.Load += new System.EventHandler(this.Teacher_Adjust_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

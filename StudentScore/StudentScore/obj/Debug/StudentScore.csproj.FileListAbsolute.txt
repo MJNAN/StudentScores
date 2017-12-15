@@ -38,3 +38,4 @@ C:\Users\廖臻珺\Desktop\整合后的学生成绩评定系统2.0\StudentScore\
 C:\Users\廖臻珺\Desktop\整合后的学生成绩评定系统2.0\StudentScore\StudentScore\obj\Debug\StudentScore.Teacher_Independent.resources
 C:\Users\廖臻珺\Desktop\整合后的学生成绩评定系统2.0\StudentScore\StudentScore\obj\Debug\StudentScore.Teacher_Informatin.resources
 C:\Users\廖臻珺\Desktop\整合后的学生成绩评定系统2.0\StudentScore\StudentScore\obj\Debug\StudentScore.csproj.GenerateResource.Cache
+C:\Users\高楠\Desktop\404原型系统1.0-04组\StudentScore\StudentScore\obj\Debug\StudentScore.Student_Between_Group.resources

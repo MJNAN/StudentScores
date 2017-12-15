@@ -47,10 +47,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(410, 76);
+            this.label1.Font = new System.Drawing.Font("宋体", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.Location = new System.Drawing.Point(386, 78);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(311, 36);
+            this.label1.Size = new System.Drawing.Size(380, 44);
             this.label1.TabIndex = 0;
             this.label1.Text = "学生成绩评定系统";
             // 
@@ -141,6 +141,7 @@
             this.toolStripMenuItem4.Name = "toolStripMenuItem4";
             this.toolStripMenuItem4.Size = new System.Drawing.Size(264, 32);
             this.toolStripMenuItem4.Text = "学生组间互评";
+            this.toolStripMenuItem4.Click += new System.EventHandler(this.toolStripMenuItem4_Click);
             // 
             // 学生成绩查看ToolStripMenuItem
             // 
@@ -158,7 +159,7 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Student";
-            this.Text = "学生成绩评定系统";
+            this.Text = "学生成绩评定";
             this.Load += new System.EventHandler(this.Student_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

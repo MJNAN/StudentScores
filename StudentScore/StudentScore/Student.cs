@@ -29,5 +29,10 @@ namespace StudentScore
         {
             (new Student_In_Group()).ShowDialog();
         }
+
+        private void toolStripMenuItem4_Click(object sender, EventArgs e)
+        {
+            (new Student_Between_Group()).ShowDialog();
+        }
     }
 }

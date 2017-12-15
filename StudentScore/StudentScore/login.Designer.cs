@@ -133,10 +133,10 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("宋体", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label3.Location = new System.Drawing.Point(452, 61);
+            this.label3.Font = new System.Drawing.Font("宋体", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label3.Location = new System.Drawing.Point(414, 64);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(279, 33);
+            this.label3.Size = new System.Drawing.Size(380, 44);
             this.label3.TabIndex = 7;
             this.label3.Text = "学生成绩评定系统";
             // 
