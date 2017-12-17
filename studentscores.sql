@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50717
 File Encoding         : 65001
 
-Date: 2017-12-15 22:48:00
+Date: 2017-12-17 16:49:34
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -232,22 +232,6 @@ CREATE TABLE `teacher_adjust` (
 INSERT INTO `teacher_adjust` VALUES ('1052015001', '张三', '10', '40', '50', '2017-12-01 00:00:00', '2017-12-04 00:00:00', '2017-12-04 00:00:00', '2017-12-07 00:00:00', '2017-12-07 00:00:00', '2017-12-10 00:00:00');
 
 -- ----------------------------
--- Table structure for teacher_admin
--- ----------------------------
-DROP TABLE IF EXISTS `teacher_admin`;
-CREATE TABLE `teacher_admin` (
-  `Group` int(5) DEFAULT NULL COMMENT '组别',
-  `Student_ID` varchar(12) NOT NULL COMMENT '学号',
-  `Major` varchar(50) DEFAULT NULL COMMENT '专业',
-  `Student_Name` varchar(50) DEFAULT NULL COMMENT '学生姓名',
-  PRIMARY KEY (`Student_ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of teacher_admin
--- ----------------------------
-
--- ----------------------------
 -- Table structure for teacher_independent
 -- ----------------------------
 DROP TABLE IF EXISTS `teacher_independent`;
@@ -264,30 +248,18 @@ CREATE TABLE `teacher_independent` (
 -- ----------------------------
 -- Records of teacher_independent
 -- ----------------------------
-INSERT INTO `teacher_independent` VALUES ('1052015001', '张文', null, '105032015001', '王五', '90');
-INSERT INTO `teacher_independent` VALUES ('1052015001', '张文', null, '105032015002', '赵六', '80');
-INSERT INTO `teacher_independent` VALUES ('1052015001', '张文', null, '105032015003', '张三', '70');
-INSERT INTO `teacher_independent` VALUES ('1052015001', '张文', null, '105032015004', '李四', '60');
+INSERT INTO `teacher_independent` VALUES ('1052015001', '张文', null, '105032015001', '王五', '10');
+INSERT INTO `teacher_independent` VALUES ('1052015001', '张文', null, '105032015002', '赵六', '20');
+INSERT INTO `teacher_independent` VALUES ('1052015001', '张文', null, '105032015003', '张三', '30');
+INSERT INTO `teacher_independent` VALUES ('1052015001', '张文', null, '105032015004', '李四', '40');
 INSERT INTO `teacher_independent` VALUES ('1052015001', '张文', null, '105032015005', '陈一', null);
-INSERT INTO `teacher_independent` VALUES ('1052015001', '张文', null, '105032015006', '胡一天', '100');
-INSERT INTO `teacher_independent` VALUES ('1052015001', '张文', null, '105032015007', '江辰', null);
-INSERT INTO `teacher_independent` VALUES ('1052015001', '张文', null, '105032015008', '陈小希', null);
-INSERT INTO `teacher_independent` VALUES ('1052015001', '张文', null, '105032015009', '高楠', null);
-INSERT INTO `teacher_independent` VALUES ('1052015001', '张文', null, '105032015010', '廖臻珺', null);
-INSERT INTO `teacher_independent` VALUES ('1052015001', '张文', null, '105032015011', '陈清棉', null);
-INSERT INTO `teacher_independent` VALUES ('1052015001', '张文', null, '105032015012', '朱诗东', null);
-INSERT INTO `teacher_independent` VALUES ('1052015002', '李奎', null, '105032015001', '王五', null);
-INSERT INTO `teacher_independent` VALUES ('1052015002', '李奎', null, '105032015002', '赵六', '80');
-INSERT INTO `teacher_independent` VALUES ('1052015002', '李奎', null, '105032015003', '张三', '70');
-INSERT INTO `teacher_independent` VALUES ('1052015002', '李奎', null, '105032015004', '李四', '60');
-INSERT INTO `teacher_independent` VALUES ('1052015002', '李奎', null, '105032015005', '陈一', null);
-INSERT INTO `teacher_independent` VALUES ('1052015002', '李奎', null, '105032015006', '胡一天', '100');
-INSERT INTO `teacher_independent` VALUES ('1052015002', '李奎', null, '105032015007', '江辰', null);
-INSERT INTO `teacher_independent` VALUES ('1052015002', '李奎', null, '105032015008', '陈小希', null);
-INSERT INTO `teacher_independent` VALUES ('1052015002', '李奎', null, '105032015009', '高楠', null);
-INSERT INTO `teacher_independent` VALUES ('1052015002', '李奎', null, '105032015010', '廖臻珺', null);
-INSERT INTO `teacher_independent` VALUES ('1052015002', '李奎', null, '105032015011', '陈清棉', null);
-INSERT INTO `teacher_independent` VALUES ('1052015002', '李奎', null, '105032015012', '朱诗东', null);
+INSERT INTO `teacher_independent` VALUES ('1052015001', '张文', null, '105032015006', '胡一天', '60');
+INSERT INTO `teacher_independent` VALUES ('1052015001', '张文', null, '105032015007', '江辰', '70');
+INSERT INTO `teacher_independent` VALUES ('1052015001', '张文', null, '105032015008', '陈小希', '80');
+INSERT INTO `teacher_independent` VALUES ('1052015001', '张文', null, '105032015009', '高楠', '90');
+INSERT INTO `teacher_independent` VALUES ('1052015001', '张文', null, '105032015010', '廖臻珺', '100');
+INSERT INTO `teacher_independent` VALUES ('1052015001', '张文', null, '105032015011', '陈清棉', '30');
+INSERT INTO `teacher_independent` VALUES ('1052015001', '张文', null, '105032015012', '朱诗东', '60');
 
 -- ----------------------------
 -- Table structure for teacher_information
@@ -306,4 +278,3 @@ CREATE TABLE `teacher_information` (
 -- Records of teacher_information
 -- ----------------------------
 INSERT INTO `teacher_information` VALUES ('1052015001', '张文', '数信', 'Teacher', 'opq');
-INSERT INTO `teacher_information` VALUES ('1052015002', '李奎', null, 'Teacher', 'cde');
