@@ -19,15 +19,20 @@ namespace StudentScore
         {
             (new Teacher_Informatin()).ShowDialog();
         }
-
+        private void toolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            (new Teacher_Independent()).ShowDialog();
+        }
         private void toolStripMenuItem4_Click(object sender, EventArgs e)
         {
             (new Teacher_Adjust()).ShowDialog();
         }
 
-        private void toolStripMenuItem3_Click(object sender, EventArgs e)
+
+
+        private void toolStripMenuItem5_Click(object sender, EventArgs e)
         {
-            (new Teacher_Independent()).ShowDialog();
+            (new Teacher_Student_Total()).ShowDialog();
         }
     }
 }

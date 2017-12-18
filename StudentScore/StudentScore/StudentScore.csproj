@@ -75,6 +75,12 @@
     <Compile Include="Student_In_Group.Designer.cs">
       <DependentUpon>Student_In_Group.cs</DependentUpon>
     </Compile>
+    <Compile Include="Student_Total.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Student_Total.Designer.cs">
+      <DependentUpon>Student_Total.cs</DependentUpon>
+    </Compile>
     <Compile Include="Teacher.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +104,12 @@
     </Compile>
     <Compile Include="Teacher_Informatin.Designer.cs">
       <DependentUpon>Teacher_Informatin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Teacher_Student_Total.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Teacher_Student_Total.Designer.cs">
+      <DependentUpon>Teacher_Student_Total.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="login.resx">
       <DependentUpon>login.cs</DependentUpon>
@@ -123,6 +135,9 @@
     <EmbeddedResource Include="Student_In_Group.resx">
       <DependentUpon>Student_In_Group.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Student_Total.resx">
+      <DependentUpon>Student_Total.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Teacher.resx">
       <DependentUpon>Teacher.cs</DependentUpon>
     </EmbeddedResource>
@@ -134,6 +149,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Teacher_Informatin.resx">
       <DependentUpon>Teacher_Informatin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Teacher_Student_Total.resx">
+      <DependentUpon>Teacher_Student_Total.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

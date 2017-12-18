@@ -148,6 +148,7 @@
             this.学生成绩查看ToolStripMenuItem.Name = "学生成绩查看ToolStripMenuItem";
             this.学生成绩查看ToolStripMenuItem.Size = new System.Drawing.Size(264, 32);
             this.学生成绩查看ToolStripMenuItem.Text = "学生成绩查看";
+            this.学生成绩查看ToolStripMenuItem.Click += new System.EventHandler(this.学生成绩查看ToolStripMenuItem_Click);
             // 
             // Student
             // 

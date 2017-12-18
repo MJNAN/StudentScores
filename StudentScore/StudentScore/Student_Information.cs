@@ -63,12 +63,12 @@ namespace StudentScore
             comboBox1.SelectedIndex = 0;
             comboBox2.SelectedIndex = 0;
             mysql = getMySqlCon();
-            textBox1.Text = Program.student_id;
-            textBox2.Text = Program.student_name;
+            label8.Text = Program.student_id;
+            label9.Text = Program.student_name;
             mysql.Open();
             String sqlSearch = "select student_information.Group from student_information where Student_ID='" + Program.student_id + "'";
             MySqlCommand mySqlCommand = getSqlCommand(sqlSearch, mysql);
-            textBox3.Text= getResultset(mySqlCommand);
+            label10.Text = getResultset(mySqlCommand);
             mysql.Close();
         }
 
@@ -96,10 +96,10 @@ namespace StudentScore
             string Major = comboBox2.Text;
             string Student_Password = textBox4.Text;
             mysql.Open();
-            String sqlUpdate1 = "update student_information set Academe = '" + comboBox1.Text + "',Major='" + comboBox2.Text + " ',Student_Password='" + textBox4.Text + " ' where Student_ID = " + textBox1.Text;
+            String sqlUpdate1 = "update student_information set Academe = '" + comboBox1.Text + "',Major='" + comboBox2.Text + " ',Student_Password='" + textBox4.Text + " ' where Student_ID = " + label8.Text;
             MySqlCommand mySqlCommand1 = getSqlCommand(sqlUpdate1, mysql);
             getUpdate(mySqlCommand1);
-            String sqlUpdate2 = "update syuser set Password='"+textBox4.Text+" ' where Use_ID = " + textBox1.Text;
+            String sqlUpdate2 = "update syuser set Password='" + textBox4.Text + " ' where Use_ID = " + label8.Text;
             MySqlCommand mySqlCommand2 = getSqlCommand(sqlUpdate2, mysql);
             getUpdate(mySqlCommand2);
             mysql.Close();

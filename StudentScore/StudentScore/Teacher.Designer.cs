@@ -153,7 +153,8 @@
             // 
             this.toolStripMenuItem5.Name = "toolStripMenuItem5";
             this.toolStripMenuItem5.Size = new System.Drawing.Size(264, 32);
-            this.toolStripMenuItem5.Text = "学生成绩查看";
+            this.toolStripMenuItem5.Text = "学生成绩管理";
+            this.toolStripMenuItem5.Click += new System.EventHandler(this.toolStripMenuItem5_Click);
             // 
             // Teacher
             // 

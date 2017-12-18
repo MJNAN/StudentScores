@@ -34,5 +34,10 @@ namespace StudentScore
         {
             (new Student_Between_Group()).ShowDialog();
         }
+
+        private void 学生成绩查看ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            (new Student_Total()).ShowDialog();
+        }
     }
 }
