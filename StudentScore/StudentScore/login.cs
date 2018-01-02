@@ -147,7 +147,7 @@ namespace StudentScore
         private void button1_Click(object sender, EventArgs e)
         {
             string Use_ID = textBox1.Text;
-            string Password = textBox2.Text;
+            string Password =textBox2.Text;
             mysql.Open();
             //查询sql
             string Use_Status = "";

@@ -219,7 +219,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Student_Information";
-            this.Text = "学生成绩评定";
+            this.Text = "*";
             this.Load += new System.EventHandler(this.Student_Information_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
